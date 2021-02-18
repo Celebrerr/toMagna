@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toMagna</title>
+    <meta name="keywords" content="toMagna, brand, identity, restaurant, nature" />
+    <link rel="icon" type="image/png" href="img/toMagna.png" sizes="32x32">
+
+    <link rel="preload" href="font/wondar-quason-free.ttf" as="font" type="font/ttf" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="transition">
+        <div class="transition__loading">
+            <h2 style="display: flex">
+                <div class="loading">P</div>
+                <div class="loading">l</div>
+                <div class="loading">e</div>
+                <div class="loading">a</div>
+                <div class="loading">s</div>
+                <div class="loading">e</div>
+                <div class="loading">&nbsp;</div>
+                <div class="loading">w</div>
+                <div class="loading">a</div>
+                <div class="loading">i</div>
+                <div class="loading">t</div>
+                <div class="loading">.</div>
+                <div class="loading">.</div>
+                <div class="loading">.</div>
+            </h2>
+        </div>
+    </div>
+    <main data-router-wrapper>
+        <article class="about-transition" data-router-view="about">
+            <div class="nav at-nav">
+                <div class="nav__logo at-nav">
+                    <a href="index.html"><img src="img/svg/sphere.svg" alt="logo"></a>
+                </div>
+                <div class="menu at-nav">
+                    <div class="menu__item-main">
+                        <div class="menu__item-inner">
+                            <div class="menu-links">
+                                <a href="about.html" class="nav__section-anchor link-item">
+                                    <div class="link underline">About</div>
+                                </a>
+                                <a href="gallery.html" class="nav__section-anchor link-item">
+                                    <div class="link underline">Gallery</div>
+                                </a>
+                                <a href="contact.html" class="nav__section-anchor link-item">
+                                    <div class="link underline">Contact</div>
+                                </a>
+                            </div>
+                            <div class="menu-bar"></div>
+                            <div class="menu-contact">
+                                <div class="menu-contact--info">
+                                    <a href="#" class="anim_email-link nav__section-anchor link-item">
+                                        <span class="link underline">-39 123123456</span>
+                                    </a>
+                                    <a href="#" class="anim_email-link nav__section-anchor link-item">
+                                        <span class="link underline">Kanagawa 250-0401, Japan</span>
+                                    </a>
+                                    <a href="#" class="anim_email-link nav__section-anchor link-item">
+                                        <span class="link underline">info@toMagna.com</span>
+                                    </a>
+                                </div>
+
+                                <span>Social</span>
+                                <a href="#" class="nav__section-anchor link-item">
+                                    <h3 class="link underline">Instagram</h3>
+                                </a>
+                                <a href="#" class="nav__section-anchor link-item">
+                                    <h3 class="link underline">Dribble</h3>
+                                </a>
+                                <a href="#" class="nav__section-anchor link-item">
+                                    <h3 class="link underline">Behance</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="action--open">
+                        <svg class="icon icon--open">
+                            <use xlink:href="#icon-menu"></use>
+                        </svg>
+                    </button>
+                    <button class="action--close">
+                        <svg class="icon icon--close">
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="toggle at-nav">
+                    <div class="nav__toggle anim-logo">
+                        <a href="&UpArrow;"><img src="img/svg/toggle.png" alt="toggle"></a>
+                    </div>
+                </div>
+                <svg class="hidden">
+                    <symbol id="icon-menu" viewBox="0 0 119 25">
+                        <path d="   M36,8 L36,0 L100,0 L100,8 L36,8 Z
+                            M0,28 L0,20 L71,20 L71,28 L0,28 Z" />
+                    </symbol>
+                    <symbol id="icon-close" viewBox="0 0 24 24">
+                        <path
+                            d="M24 1.485L22.515 0 12 10.515 1.485 0 0 1.485 10.515 12 0 22.515 1.485 24 12 13.484 22.515 24 24 22.515 13.484 12z" />
+                    </symbol>
+                </svg>
+            </div>
+            <div class="nav__arrow">
+                <a href="#" id="go-down"><span>&darr;</span></a>
+            </div>
+
+            <div class="container">
+                <section class="about content" id="top">
+                    <div class="about__title">
+                        <h1 class="at_about-title">About us</h1>
+                    </div>
+                    <div class="about__desc">
+                        <div class="about__desc-col">
+                            <fiv class="about__desc-col--title">
+                                <h3 class="at_about-text--left delay">
+                                    Love for nature and sustenibility!
+                                </h3>
+                            </fiv>
+                            <div class="about__desc-col--parag">
+                                <p class="at_about-text--left">
+                                    The artist Wallace Arcangelo and Chef Nicolas Brown launch a brand new restaurant
+                                    concept:toMagna.
+                                </p>
+                            </div>
+                            <br>
+                            <div class="about__desc-col--parag">
+                                <p class="at_about-text--left">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tenetur non
+                                    dolores
+                                    exercitationem quibusdam veritatis debitis amet omnis? Accusamus dolor reiciendis
+                                    quo
+                                    dignissimos voluptate sunt repellat aut. Ea, ut assumenda.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about__desc-col">
+                            <div class="about__desc-col--parag">
+                                <p class="at_about-text--right">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt, ipsam autem,
+                                    voluptates.
+                                </p>
+                            </div>
+                            <br>
+                            <div class="about__desc-col--parag">
+                                <p class="at_about-text--right">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique repudiandae
+                                    veritatis
+                                    tenetur
+                                    amet, vitae aut voluptatem debitis, quos odio consectetur dolore ad nam fuga alias
+                                    hic
+                                    iste
+                                    eveniet optio quas.
+                            </div>
+                            <br>
+                            <div class="about__desc-col--parag">
+                                <p class="at_about-text--right">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-location">
+                        <div class="about-location__title">
+                            <h1 class="at_about-title">Location</h1>
+                        </div>
+                        <div class="about-location__desc">
+                            <p>Immerse yourself in our paradise,</p>
+                            <p>in an unique experience</p>
+                            <p>to discover how nature and</p>
+                            <p>cooking can live togheter</p>
+                        </div>
+                        <div class="about-location__map">
+                            <div id="mapid"></div>
+                        </div>
+                        <div class="about-location__cta">
+                            <a href="https://www.google.com/maps/dir//35.2662038,139.0500807/@35.2662038,139.0500807,17z/data=!4m2!4m1!3e0"
+                                target="__blank">
+                                <p class="as-main as-text--right">&rarr; &nbsp; Get directions</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="parallax">
+                <div class="parallax__sections as-main as-text--span">
+                    <a href="about.html" class="link underline">About</a>
+                    <a href="gallery.html" class="link underline">Gallery</a>
+                    <a href="contact.html" class="link underline">Contact</a>
+                </div>
+                <div class="parallax__contact">
+                    <div class="parallax__contact-text link-item">
+                        <h2 class="as-main as-text--right">Talk</h2>
+                        <a href="#">
+                            <p class="as-main as-text--left link underline">+39 123123456</p>
+                        </a>
+                    </div>
+                    <div class="parallax__contact-text link-item">
+                        <h2 class="as-main as-text--right ">Meet</h2>
+                        <a href="#">
+                            <p class="as-main as-text--left link underline">Kanagawa 250-0401, Japan</p>
+                        </a>
+                    </div>
+                    <div class="parallax__contact-text link-item">
+                        <h2 class="as-main as-text--right">Write</h2>
+                        <a href="#">
+                            <p class="as-main as-text--left link underline"><em>info@toMagna.com</em></p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="parallax__footer">
+                    <div class="parallax__footer-copy">
+                        <span class="as-main as-text--left">&#169;Copyright2020 toMagna</span>
+                    </div>
+                    <div class="parallax__footer-terms">
+                        <a class="as-main as-text--right" href="#"><span>Privacy Policy</span></a>
+                        <a class="as-main as-text--right" href="#"><span>Term of Use</span></a>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <script src="./js/Fade.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

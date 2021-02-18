@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toMagna</title>
+    <link rel="icon" type="image/png" href="img/toMagna.png" sizes="32x32">
+
+    <meta name="keywords" content="toMagna, brand, identity, restaurant, nature" />
+    <meta property="og:title" content="toMagna" />
+    <meta property="og:description" content="New brand indentity by Wallace Arcangelo" />
+    <meta property="og:url" content="https://tomagna.netlify.app/" />
+    <meta property="og:site_name" content="toMagna" />
+    <!-- Image OG -->
+    <meta property="og:image" content="img/toMagna_OG.png" />
+    <meta property="og:image:secure_url" content="https://photos.app.goo.gl/Dxap5hMidvPgfaNX9" />
+    <!-- Twitter OG -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="toMagna">
+    <meta name="twitter:description" content="New brand indentity by Wallace Arcangelo">
+    <meta property="twitter:image" content="./img/toMagna_OG.png" />
+
+    <link rel="preload" href="font/wondar-quason-free.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="img/rest/exterior4.jpg" as="image">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="style.css" as="style">
+
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" hre <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="transition">
+        <div class="transition__loading">
+            <h2 style="display: flex">
+                <div class="loading">P</div>
+                <div class="loading">l</div>
+                <div class="loading">e</div>
+                <div class="loading">a</div>
+                <div class="loading">s</div>
+                <div class="loading">e</div>
+                <div class="loading">&nbsp;</div>
+                <div class="loading">w</div>
+                <div class="loading">a</div>
+                <div class="loading">i</div>
+                <div class="loading">t</div>
+                <div class="loading">.</div>
+                <div class="loading">.</div>
+                <div class="loading">.</div>
+            </h2>
+        </div>
+    </div>
+    <main data-router-wrapper>
+
+        <article class="index-transition" data-router-view="index">
+            <div class="nav">
+                <div class="nav__logo at-nav">
+                    <a href="#"><img src="img/svg/sphere.svg" alt="logo"></a>
+                </div>
+                <div class="menu at-nav">
+                    <div class="menu__item-main">
+                        <div class="menu__item-inner">
+                            <div class="menu-links">
+                                <a href="about.html" class="nav__section-anchor link-item">
+                                    <div class="link underline">About</div>
+                                </a>
+                                <a href="gallery.html" class="nav__section-anchor link-item">
+                                    <div class="link underline">Gallery</div>
+                                </a>
+                                <a href="contact.html" class="nav__section-anchor link-item">
+                                    <div class="link underline">Contact</div>
+                                </a>
+                            </div>
+                            <div class="menu-bar"></div>
+                            <div class="menu-contact">
+                                <div class="menu-contact--info">
+                                    <a href="#" class="anim_email-link nav__section-anchor link-item">
+                                        <span class="link underline">-39 123123456</span>
+                                    </a>
+                                    <a href="#" class="anim_email-link nav__section-anchor link-item">
+                                        <span class="link underline">Kanagawa 250-0401, Japan</span>
+                                    </a>
+                                    <a href="#" class="anim_email-link nav__section-anchor link-item">
+                                        <span class="link underline">info@toMagna.com</span>
+                                    </a>
+                                </div>
+
+                                <span>Social</span>
+                                <a href="#" class="nav__section-anchor link-item">
+                                    <h3 class="link underline">Instagram</h3>
+                                </a>
+                                <a href="#" class="nav__section-anchor link-item">
+                                    <h3 class="link underline">Dribble</h3>
+                                </a>
+                                <a href="#" class="nav__section-anchor link-item">
+                                    <h3 class="link underline">Behance</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="action--open">
+                        <svg class="icon icon--open">
+                            <use xlink:href="#icon-menu"></use>
+                        </svg>
+                    </button>
+                    <button class="action--close">
+                        <svg class="icon icon--close">
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="toggle at-nav">
+                    <div class="nav__toggle anim-logo">
+                        <a href="&UpArrow;"><img src="img/svg/toggle.png" alt="toggle"></a>
+                    </div>
+                </div>
+                <svg class="hidden">
+                    <symbol id="icon-menu" viewBox="0 0 119 25">
+                        <path d="   M36,8 L36,0 L100,0 L100,8 L36,8 Z
+                            M0,28 L0,20 L71,20 L71,28 L0,28 Z" />
+                    </symbol>
+                    <symbol id="icon-close" viewBox="0 0 24 24">
+                        <path
+                            d="M24 1.485L22.515 0 12 10.515 1.485 0 0 1.485 10.515 12 0 22.515 1.485 24 12 13.484 22.515 24 24 22.515 13.484 12z" />
+                    </symbol>
+                </svg>
+            </div>
+            <div class="nav__arrow">
+                <a href="#" id="go-down"><span class="at_hero-arrow">&darr;</span></a>
+            </div>
+
+            <div class="container">
+                <section class="hero content test" id="top">
+                    <div class="hero__title">
+                        <h1 class="hero__title-stagger">
+                            <div class="at_hero-title">t</div>
+                            <div class="at_hero-title">o</div>
+                            <div class="at_hero-title">M</div>
+                            <div class="at_hero-title">a</div>
+                            <div class="at_hero-title">g</div>
+                            <div class="at_hero-title">n</div>
+                            <div class="at_hero-title">a</div>
+                        </h1>
+                    </div>
+                    <div class="hero__image">
+                        <img class="hero-img at_hero-img" src="img/rest/exterior4.jpg" alt="">
+                    </div>
+                    <div class="hero__owner as-main as-text--span">
+                        <span class="at_hero-owner">New brand identity by:</span>
+                        <p class="at_hero-owner">Wallace Arcangelo</p>
+                    </div>
+                </section>
+
+                <section class="project content test2" id="project">
+                    <div class="project__image">
+                        <img class="project-img project-img--left as-main as-image" src="img/rest/exterior1.jpg" alt="">
+                        <img class="project-img project-img--right as-main as-image" src="img/rest/exterior5.jpg"
+                            alt="">
+                    </div>
+                    <div class="project__title">
+                        <span>
+                            <div class="as-main as-text--span">/project</div>
+                        </span>
+                        <h2 class="project__title-text">
+                            <div class="as-main as-text--left">Lorem ipsum dolor sit, amet</div>
+                            <div class="as-main as-text--left">consectetur adipisicing elit.</div>
+                            <div class="as-main as-text--left">Consectetur
+                                totam natus tenetur.</div>
+                        </h2>
+                        <p class="as-main as-text--left">"Eat, sleep and fall in love with nature"</p>
+                    </div>
+                </section>
+
+                <section class="space content">
+                    <div class="space__title">
+                        <span class="as-main as-text--span">/SPACE</span>
+                        <h1>
+                            <div class="space__title--item">
+                                <h1 class="as-main as-text--left">The space</h1>
+                            </div>
+                            <div class="space__title--item">
+                                <h1 class="as-main as-text--left">designed</h1>
+                            </div>
+                            <div class="space__title--item">
+                                <h1 class="as-main as-text--left">with</h1>
+                            </div>
+                            <div class="space__title--item">
+                                <h1 class="as-main as-text--left">the nature</h1>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="space__desc">
+                        <div class="space__desc--item">
+                            <p class="as-main as-text--right">An elegant and smooth space surrounded by Mother Earth.
+                            </p>
+                        </div>
+                        <div class="space__desc--item">
+                            <p class="as-main as-text--right">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Reprehenderit
+                                distinctio veniam odio cum,
+                                hic nisi quaerat tenetur velit pariatur sed aspernatur assumenda dolore fugit maxime
+                                nostrum.
+                            </p>
+                        </div>
+                        <div class="space__desc--item">
+                            <p class="as-main as-text--right">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Reprehenderit
+                                distinctio veniam odio cum,
+                                hic nisi quaerat tenetur velit pariatur sed aspernatur assumenda dolore fugit maxime
+                                nostrum,
+                                provident ducimus neque! Temporibus!</p>
+                        </div>
+                        <div class="space__desc--item">
+                            <a href="about.html" class="link-item">
+                                <p class="as-main as-text--right link underline">&rarr; &nbsp; Read more about us!</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="parallax-section ">
+                    <div class="parallax-img"></div>
+                </section>
+
+                <section class="location content">
+                    <div class="location__title">
+                        <span class="as-main as-text--span">/location</span>
+                        <h1>
+                            <div class="location__title--item">
+                                <h1 class="as-main as-text--left">AN</h1>
+                            </div>
+                            <div class="location__title--item">
+                                <h1 class="as-main as-text--left">HAUNTING</h1>
+                            </div>
+                            <div class="location__title--item">
+                                <h1 class="as-main as-text--left">LOCATION</h1>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="location__desc">
+                        <div class="location__desc--item">
+                            <p class="as-main as-text--right">Let yourself go by the superb selection of our selected
+                                recipes
+                            </p>
+                        </div>
+                        <div class="location__desc--item">
+                            <p class="as-main as-text--right">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Reprehenderit
+                                distinctio veniam odio cum,
+                                hic nisi quaerat tenetur velit pariatur sed aspernatur assumenda dolore fugit maxime
+                                nostrum.
+                            </p>
+                        </div>
+                        <div class="location__desc--item">
+                            <a href="about.html">
+                                <p class="as-main as-text--right">&rarr; &nbsp; Discover More!</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="slideshow content">
+                    <span>/GALLERY</span>
+                    <div class="slideshow-container">
+                        <div class="slideshow-inner">
+                            <img class="slide" src="img/rest/rest3.jpg" alt="slide1">
+                            <img class="slide" src="img/rest/rest2.jpg" alt="slide3">
+                        </div>
+                    </div>
+                    <div class="slideshow__cta">
+                        <a href="gallery.html">
+                            <p class="as-main as-text--right">&rarr; &nbsp; Discover our gallery</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="parallax">
+                <div class="parallax__sections as-main as-text--span">
+                    <a href="about.html" class="link underline">About</a>
+                    <a href="gallery.html" class="link underline">Gallery</a>
+                    <a href="contact.html" class="link underline">Contact</a>
+                </div>
+                <div class="parallax__contact">
+                    <div class="parallax__contact-text link-item">
+                        <h2 class="as-main as-text--right">Talk</h2>
+                        <a href="#">
+                            <p class="as-main as-text--left link underline">+39 123123456</p>
+                        </a>
+                    </div>
+                    <div class="parallax__contact-text link-item">
+                        <h2 class="as-main as-text--right ">Meet</h2>
+                        <a href="#">
+                            <p class="as-main as-text--left link underline">Kanagawa 250-0401, Japan</p>
+                        </a>
+                    </div>
+                    <div class="parallax__contact-text link-item">
+                        <h2 class="as-main as-text--right">Write</h2>
+                        <a href="#">
+                            <p class="as-main as-text--left link underline"><em>info@toMagna.com</em></p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="parallax__footer">
+                    <div class="parallax__footer-copy">
+                        <span class="as-main as-text--left">&#169;Copyright2020 toMagna</span>
+                    </div>
+                    <div class="parallax__footer-terms">
+                        <a class="as-main as-text--right" href="#"><span>Privacy Policy</span></a>
+                        <a class="as-main as-text--right" href="#"><span>Term of Use</span></a>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+    <script src="./js/Fade.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

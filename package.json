@@ -1,0 +1,17 @@
+{
+  "name": "tomagna",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "gsap": "^3.6.0",
+    "leaflet": "^1.7.1",
+    "leaflet-sleep": "^0.5.2"
+  }
+}

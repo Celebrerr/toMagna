@@ -1212,7 +1212,80 @@ textarea:focus ~ label, textarea:focus ~ label {
         display: none;
     } 
 }
-
+@media screen and (orientation:landscape)
+and (min-device-width: 320px) 
+and (max-device-width: 820px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 20px;
+    }
+    svg {
+        height: 600px;
+        width: 600px;
+    }
+    .menu-links a {
+        font-size: 60px;
+        margin-bottom: 16px;
+    }
+    .menu-contact span {
+        font-size: 16px;
+        margin-bottom: 16px;
+        opacity: .8;
+    }
+    .nav__logo img,
+    .nav__toggle img {
+        width: 30px;
+    }
+    .icon--open {
+        width: 30px;
+        height: 30px;
+    }
+    .icon--close {
+        width: 15px;
+        height: 15px;
+    }
+    .nav__arrow {
+        display: none;
+    }
+    .hero {
+        height: 100%;
+    }
+    .contact {
+        height: 100%;
+        padding: 128px 32px 0 32px;
+    }
+    .contact__col{
+        display: block;
+        justify-content: center;
+        width: 100%;
+    }
+    .contact__col-form{
+        width: 100%;
+    }
+    .contact__col-info {
+        margin: 0;
+    }
+    .contact__col-links {
+        max-width: none;
+    }
+    .parallax-img {
+        background-position: 00;
+    }
+    .parallax__contact {
+        padding: 32px;
+    }
+    .footer {
+        position: relative;
+    }
+}
 
 *,
 *:before,

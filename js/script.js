@@ -13,9 +13,9 @@ const H = new Highway.Core({
 });
 
 window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-    
+    window.scrollTo(0, 0); 
 }; 
+
 const body = document.querySelector('body');
 const main = document.querySelector('main');
 const article = document.querySelector('article');
@@ -32,25 +32,30 @@ const isMobile = window.matchMedia('(max-width: 800px)');
 // ---------- Loading transition -----------//
 document.onreadystatechange = function() { 
     if (document.readyState !== "complete") { 
-        const tl = gsap.timeline({ defaults: {
-            ease: "Quart.easeOut"
-        }, 
-        // repeat:-1, repeatDelay: 0.5 
-        });
-        tl.from('.loading', {
-            duration: 1.2,
-            y: 50,
-            scaleY: 0,
-            stagger: .1,
-            onComplete: ()=> {
-                document.querySelector('.transition').style.display = 'none';
-                animationIntro(); 
-            }
-        }), 'same';
-        tl.to('.transition', {
-            duration: 1,
-            opacity: 0,
-        });
+        const images = document.querySelectorAll('img');
+        imagesLoaded(images, ()=> {
+            console.log('images loaded');
+            const tl = gsap.timeline({ defaults: {
+                ease: "Quart.easeOut"
+            }, 
+            });
+            tl.from('.loading', {
+                duration: 1.2,
+                y: 50,
+                scaleY: 0,
+                stagger: .1,
+                onComplete: ()=> {
+                    document.querySelector('.transition').style.display = 'none';
+                    animationIntro(); 
+                }
+            }), 'same';
+            tl.to('.transition', {
+                duration: 1,
+                opacity: 0,
+            });
+        })
+    } else {
+        
     }
 }; 
 // ---------- Intro animation -----------
@@ -470,4 +475,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
 

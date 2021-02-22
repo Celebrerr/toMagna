@@ -305,7 +305,7 @@ class Fade extends Highway.Transition {
                     ease: 'Quart.easeOut',
                     opacity: 1,
                     onStart: ()=>{
-                        body.classList.contains('index-transition') && scrollY < project.offsetTop ? classicNav('transparent') : classicNav('var(--primary_color)');
+                        article.classList.contains('index-transition') && scrollY < project.offsetTop ? classicNav('transparent') : classicNav('var(--primary_color)');
                     }
                 });
                 main.classList.add('menuOpen');
@@ -316,7 +316,7 @@ class Fade extends Highway.Transition {
                     ease: 'Quart.easeOut',
                     opacity: 0,
                     onUpdate: ()=>{
-                        body.classList.contains('index-transition') && (scrollY < project.offsetTop) ? invertNav() : classicNav('var(--primary_color)');
+                        article.classList.contains('index-transition') && (scrollY < project.offsetTop) ? invertNav() : classicNav('var(--primary_color)');
                     }
                 });
                 TweenMax.to(innerM, 1.2, {

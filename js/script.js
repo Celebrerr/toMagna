@@ -15,11 +15,8 @@ const H = new Highway.Core({
 window.onbeforeunload = function () {
     window.scrollTo(0, 0); 
 }; 
-
 const body = document.querySelector('body');
-const main = document.querySelector('main');
 const article = document.querySelector('article');
-
 const nav = document.querySelector('.nav');
 const project = document.querySelector('.project');
 
@@ -54,8 +51,6 @@ document.onreadystatechange = function() {
                 opacity: 0,
             });
         })
-    } else {
-        
     }
 }; 
 // ---------- Intro animation -----------
@@ -330,7 +325,8 @@ class Menu {
                 ease: 'Quart.easeOut',
                 opacity: 1,
                 onStart: ()=>{
-                    body.classList.contains('index-transition') && scrollY < project.offsetTop ? classicNav('transparent') : classicNav('var(--primary_color)');
+                    article.classList.contains('index-transition') && scrollY < project.offsetTop ? classicNav('transparent') : classicNav('var(--primary_color)');
+                    body.style.overflow = 'hidden';
                 }
             });
         }
@@ -340,7 +336,9 @@ class Menu {
                 ease: 'Quart.easeOut',
                 opacity: 0,
                 onUpdate: ()=>{
-                    body.classList.contains('index-transition') && (scrollY < project.offsetTop) ? invertNav() : classicNav('var(--primary_color)');
+                    article.classList.contains('index-transition') && (scrollY < project.offsetTop) ? invertNav() : classicNav('var(--primary_color)');
+                    body.style.overflow = 'auto';
+
                 }
             });
             TweenMax.to(innerM, 1.2, {

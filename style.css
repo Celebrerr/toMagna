@@ -1232,13 +1232,11 @@ and (max-device-width: 820px) {
         width: 600px;
     }
     .menu-links a {
-        font-size: 60px;
+        font-size: 50px;
         margin-bottom: 16px;
     }
-    .menu-contact span {
-        font-size: 16px;
-        margin-bottom: 16px;
-        opacity: .8;
+    .menu-contact--info {
+        display: none;
     }
     .nav__logo img,
     .nav__toggle img {

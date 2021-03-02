@@ -18,7 +18,7 @@ window.onbeforeunload = function () {
 const body = document.querySelector('body');
 const article = document.querySelector('article');
 const nav = document.querySelector('.nav');
-const project = document.querySelector('.project');
+const project = document.getElementById('project');
 
 const iconMenu = document.querySelector('.icon--open');
 const iconLogo = document.querySelector('.nav__logo');
@@ -95,11 +95,10 @@ function animationIntro() {
             ease: 'Quart.easeOut'
         });
 
-        const scrollDown = document.getElementById('go-down'); 
-        const scrollToFooter = document.getElementById('project');
-            scrollDown.addEventListener('click', function(e) {
+        const arrowDown = document.getElementById('go-down'); 
+        arrowDown.addEventListener('click', function(e) {
             e.preventDefault();
-            scrollToFooter.scrollIntoView({behavior: 'smooth'});
+            project.scrollIntoView({behavior: 'smooth'});
         });
     
         // --------- SlideShow ----------
@@ -160,11 +159,11 @@ function animationIntro() {
         });
         TweenMax.from ('.at_gallery-text--left', 1.5, {
             delay: 0,
-            y: 500, 
+            y: 200, 
             rotate: rotate,
             opacity: 1,
             scaleY: .8,
-            stagger: .3,
+            stagger: .2,
             ease: 'Quart.easeOut',
         });
     } 
@@ -284,12 +283,19 @@ function slideshow() {
 }
 
 // ---------- Toggle -----------
-const scrollUp = document.querySelector('.nav__toggle');
-const sectionBeginning = document.getElementById('top');
+const toggle = document.querySelector('.nav__toggle');
+const goToBegin = document.getElementById('top');
+const goToEnd = document.getElementById('bottom');
 
-scrollUp.addEventListener('click', function(e) {
+toggle.addEventListener('click', function(e) {
     e.preventDefault();
-    sectionBeginning.scrollIntoView({behavior: 'smooth'});
+    if (scrollY < project.offsetTop) {
+        goToEnd.scrollIntoView({behavior: 'smooth'});
+
+    } else {
+        goToBegin.scrollIntoView({behavior: 'smooth'});
+
+    }
 });
 
 // ----------- Menu -----------
@@ -401,7 +407,6 @@ function invertNav() {
     iconMenu.style.fill = 'var(--primary_color)';
     iconLogo.style.filter = 'invert()';
     iconToggle.style.filter = 'invert()';
-
 }
 function classicNav() {
     nav.style.background = 'var(--primary_color)';
@@ -415,25 +420,29 @@ function scrollAnimation(element) {
     let rotate = 0;
     let scale = 1;
 
-    if (element.classList.contains('as-image')) {
-        y = 500;  
-    }
-    else if (element.classList.contains('as-image-parallax')) {
-        return test();
-    }
-    else if (element.classList.contains('as-text--span')) {
-        y = 0;
-    }
-    else if (element.classList.contains('as-text--left')) {
-        y = 100;
-        rotate = 5;
-        scale = .8;
-    }
-    else if (element.classList.contains('as-text--right')) {
-        y = 100;
-        rotate = -5;
-        scale = .8;
-    }
+        
+    
+        if (element.classList.contains('as-image')) {
+            y = 500;  
+        }
+        else if (element.classList.contains('as-text--span')) {
+            y = 0;
+        }
+        else if (element.classList.contains('as-text--left')) {
+            y = 100;
+            rotate = 5;
+            scale = .8;
+        }
+        else if (element.classList.contains('as-text--right')) {
+            y = 100;
+            rotate = 0;
+            scale = .8;
+        }
+        if (isMobile.matches) {
+            rotate = 0;
+            scale = 1;
+        }
+
     gsap.fromTo(element, {delay: 0, y: y, rotate: rotate, opacity: 0, scale: scale }, {
         duration: 1, 
         y: 0, 
@@ -442,12 +451,6 @@ function scrollAnimation(element) {
         scale: 1,
         ease: 'Quart.easeOut',
     });
-    function test(){
-        TweenMax.from(element, 1, {
-            scale: 1.5,
-            ease: 'Quart.easeOut',
-        });
-    };
 };  
 function hide(element) {
     gsap.set(element, {
@@ -456,14 +459,9 @@ function hide(element) {
     });
 };  
 document.addEventListener("DOMContentLoaded", function() {
-    if (isMobile.matches) {
-        return
-    }
-    else {
-        gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray(".as-main").forEach(function(element) {
         hide(element);
-        
             ScrollTrigger.create({
                 trigger: element,
                 onEnter: function() { scrollAnimation(element)},
@@ -471,7 +469,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 end: 'top center',
             });
         });
-    }
 });
 
 

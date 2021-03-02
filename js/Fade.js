@@ -34,7 +34,7 @@ class Fade extends Highway.Transition {
     const article = document.querySelector('article');
     
     const nav = document.querySelector('.nav');
-    const project = document.querySelector('.project');
+    const project = document.getElementById('project');
     
     const iconMenu = document.querySelector('.icon--open');
     const iconLogo = document.querySelector('.nav__logo');
@@ -52,7 +52,7 @@ class Fade extends Highway.Transition {
     });
     if (isMobile.matches) {
         rotate = 0;
-        scale = 1;
+        scale = 0;
     }
     if (article.classList.contains('index-transition')) {
         invertNav()
@@ -265,12 +265,19 @@ class Fade extends Highway.Transition {
             }
     }
     // ---------- Toggle -----------
-    const scrollUp = document.querySelector('.nav__toggle');
-    const sectionBeginning = document.getElementById('top');
-    
-    scrollUp.addEventListener('click', function(e) {
+    const toggle = document.querySelector('.nav__toggle');
+    const goToBegin = document.getElementById('top');
+    const goToEnd = document.getElementById('bottom');
+
+    toggle.addEventListener('click', function(e) {
         e.preventDefault();
-        sectionBeginning.scrollIntoView({behavior: 'smooth'});
+        if (scrollY < project.offsetTop) {
+            goToEnd.scrollIntoView({behavior: 'smooth'});
+
+        } else {
+            goToBegin.scrollIntoView({behavior: 'smooth'});
+
+        }
     });
     // ----------- Menu -----------
     class Menu {
@@ -395,9 +402,6 @@ class Fade extends Highway.Transition {
         if (element.classList.contains('as-image')) {
             y = 500;  
         }
-        else if (element.classList.contains('as-image-parallax')) {
-            return test();
-        }
         else if (element.classList.contains('as-text--span')) {
             y = 0;
         }
@@ -408,8 +412,12 @@ class Fade extends Highway.Transition {
         }
         else if (element.classList.contains('as-text--right')) {
             y = 100;
-            rotate = -5;
+            rotate = 5;
             scale = .8;
+        }
+        if (isMobile.matches) {
+            rotate = 0;
+            scale = 1;
         }
         gsap.fromTo(element, {delay: 0, y: y, rotate: rotate, opacity: 0, scale: scale }, {
             duration: 1, 
@@ -419,12 +427,6 @@ class Fade extends Highway.Transition {
             scale: 1,
             ease: 'Quart.easeOut',
         });
-        function test(){
-            TweenMax.from(element, 1, {
-                scale: 1.5,
-                ease: 'Quart.easeOut',
-            });
-        };
     };  
     function hide(element) {
         gsap.set(element, {
@@ -432,22 +434,16 @@ class Fade extends Highway.Transition {
             opacity: 0
         });
     };  
-    if (isMobile.matches) {
-        return
-    }
-    else {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray(".as-main").forEach(function(element) {
-        hide(element);
-        
-            ScrollTrigger.create({
-                trigger: element,
-                onEnter: function() { scrollAnimation(element)},
-                start: 'top bottom',
-                end: 'top center',
-            });
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".as-main").forEach(function(element) {
+    hide(element);
+        ScrollTrigger.create({
+            trigger: element,
+            onEnter: function() { scrollAnimation(element)},
+            start: 'top bottom',
+            end: 'top center',
         });
-    }
+    });
   }
 }
 export default Fade;
